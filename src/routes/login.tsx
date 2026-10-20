@@ -15,7 +15,7 @@ function Login() {
 
   const submit = (e: React.FormEvent) => {
     e.preventDefault();
-    const nombre = tab === "registro" ? f.nombre : f.correo.split("@")[0];
+    const nombre = tab === "registro" ? f.nombre : (f.correo.split("@")[0] ?? f.correo);
     actions.login(nombre, f.correo);
     setDone(tab === "registro" ? `¡Bienvenido/a, ${nombre}! Tu cuenta fue creada.` : `Hola de nuevo, ${nombre}.`);
   };

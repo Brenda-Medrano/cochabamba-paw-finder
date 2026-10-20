@@ -8,7 +8,7 @@ export const COLORES = ["Negro", "Blanco", "Café", "Dorado", "Gris", "Atigrado"
 export const TAMANOS = ["Pequeño", "Mediano", "Grande"];
 
 export type Pet = {
-  id: string; nombre: string; especie: string; raza?: string; color: string; tamano: string;
+  id: string; nombre: string; especie: string; raza?: string | undefined; color: string; tamano: string;
   fecha: string; zona: string; estado: "perdido" | "encontrado"; descripcion: string; foto: string; contacto: string;
 };
 export type Adoptable = {
