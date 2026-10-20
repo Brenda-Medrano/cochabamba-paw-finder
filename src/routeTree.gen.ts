@@ -10,33 +10,154 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AdoptaRouteImport } from './routes/adopta'
+import { Route as BuscarRouteImport } from './routes/buscar'
+import { Route as LoginRouteImport } from './routes/login'
+import { Route as PanelAlbergueRouteImport } from './routes/panel-albergue'
+import { Route as ReportarHallazgoRouteImport } from './routes/reportar-hallazgo'
+import { Route as ReportarPerdidaRouteImport } from './routes/reportar-perdida'
+import { Route as AdopcionIdRouteImport } from './routes/adopcion.$id'
+import { Route as MascotaIdRouteImport } from './routes/mascota.$id'
+import { Route as SolicitarIdRouteImport } from './routes/solicitar.$id'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdoptaRoute = AdoptaRouteImport.update({
+  id: '/adopta',
+  path: '/adopta',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BuscarRoute = BuscarRouteImport.update({
+  id: '/buscar',
+  path: '/buscar',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PanelAlbergueRoute = PanelAlbergueRouteImport.update({
+  id: '/panel-albergue',
+  path: '/panel-albergue',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReportarHallazgoRoute = ReportarHallazgoRouteImport.update({
+  id: '/reportar-hallazgo',
+  path: '/reportar-hallazgo',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReportarPerdidaRoute = ReportarPerdidaRouteImport.update({
+  id: '/reportar-perdida',
+  path: '/reportar-perdida',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdopcionIdRoute = AdopcionIdRouteImport.update({
+  id: '/adopcion/$id',
+  path: '/adopcion/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MascotaIdRoute = MascotaIdRouteImport.update({
+  id: '/mascota/$id',
+  path: '/mascota/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SolicitarIdRoute = SolicitarIdRouteImport.update({
+  id: '/solicitar/$id',
+  path: '/solicitar/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/adopta': typeof AdoptaRoute
+  '/buscar': typeof BuscarRoute
+  '/login': typeof LoginRoute
+  '/panel-albergue': typeof PanelAlbergueRoute
+  '/reportar-hallazgo': typeof ReportarHallazgoRoute
+  '/reportar-perdida': typeof ReportarPerdidaRoute
+  '/adopcion/$id': typeof AdopcionIdRoute
+  '/mascota/$id': typeof MascotaIdRoute
+  '/solicitar/$id': typeof SolicitarIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/adopta': typeof AdoptaRoute
+  '/buscar': typeof BuscarRoute
+  '/login': typeof LoginRoute
+  '/panel-albergue': typeof PanelAlbergueRoute
+  '/reportar-hallazgo': typeof ReportarHallazgoRoute
+  '/reportar-perdida': typeof ReportarPerdidaRoute
+  '/adopcion/$id': typeof AdopcionIdRoute
+  '/mascota/$id': typeof MascotaIdRoute
+  '/solicitar/$id': typeof SolicitarIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/adopta': typeof AdoptaRoute
+  '/buscar': typeof BuscarRoute
+  '/login': typeof LoginRoute
+  '/panel-albergue': typeof PanelAlbergueRoute
+  '/reportar-hallazgo': typeof ReportarHallazgoRoute
+  '/reportar-perdida': typeof ReportarPerdidaRoute
+  '/adopcion/$id': typeof AdopcionIdRoute
+  '/mascota/$id': typeof MascotaIdRoute
+  '/solicitar/$id': typeof SolicitarIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/adopta'
+    | '/buscar'
+    | '/login'
+    | '/panel-albergue'
+    | '/reportar-hallazgo'
+    | '/reportar-perdida'
+    | '/adopcion/$id'
+    | '/mascota/$id'
+    | '/solicitar/$id'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/adopta'
+    | '/buscar'
+    | '/login'
+    | '/panel-albergue'
+    | '/reportar-hallazgo'
+    | '/reportar-perdida'
+    | '/adopcion/$id'
+    | '/mascota/$id'
+    | '/solicitar/$id'
+  id:
+    | '__root__'
+    | '/'
+    | '/adopta'
+    | '/buscar'
+    | '/login'
+    | '/panel-albergue'
+    | '/reportar-hallazgo'
+    | '/reportar-perdida'
+    | '/adopcion/$id'
+    | '/mascota/$id'
+    | '/solicitar/$id'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AdoptaRoute: typeof AdoptaRoute
+  BuscarRoute: typeof BuscarRoute
+  LoginRoute: typeof LoginRoute
+  PanelAlbergueRoute: typeof PanelAlbergueRoute
+  ReportarHallazgoRoute: typeof ReportarHallazgoRoute
+  ReportarPerdidaRoute: typeof ReportarPerdidaRoute
+  AdopcionIdRoute: typeof AdopcionIdRoute
+  MascotaIdRoute: typeof MascotaIdRoute
+  SolicitarIdRoute: typeof SolicitarIdRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +169,83 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/adopta': {
+      id: '/adopta'
+      path: '/adopta'
+      fullPath: '/adopta'
+      preLoaderRoute: typeof AdoptaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/buscar': {
+      id: '/buscar'
+      path: '/buscar'
+      fullPath: '/buscar'
+      preLoaderRoute: typeof BuscarRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/panel-albergue': {
+      id: '/panel-albergue'
+      path: '/panel-albergue'
+      fullPath: '/panel-albergue'
+      preLoaderRoute: typeof PanelAlbergueRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/reportar-hallazgo': {
+      id: '/reportar-hallazgo'
+      path: '/reportar-hallazgo'
+      fullPath: '/reportar-hallazgo'
+      preLoaderRoute: typeof ReportarHallazgoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/reportar-perdida': {
+      id: '/reportar-perdida'
+      path: '/reportar-perdida'
+      fullPath: '/reportar-perdida'
+      preLoaderRoute: typeof ReportarPerdidaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/adopcion/$id': {
+      id: '/adopcion/$id'
+      path: '/adopcion/$id'
+      fullPath: '/adopcion/$id'
+      preLoaderRoute: typeof AdopcionIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mascota/$id': {
+      id: '/mascota/$id'
+      path: '/mascota/$id'
+      fullPath: '/mascota/$id'
+      preLoaderRoute: typeof MascotaIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/solicitar/$id': {
+      id: '/solicitar/$id'
+      path: '/solicitar/$id'
+      fullPath: '/solicitar/$id'
+      preLoaderRoute: typeof SolicitarIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AdoptaRoute: AdoptaRoute,
+  BuscarRoute: BuscarRoute,
+  LoginRoute: LoginRoute,
+  PanelAlbergueRoute: PanelAlbergueRoute,
+  ReportarHallazgoRoute: ReportarHallazgoRoute,
+  ReportarPerdidaRoute: ReportarPerdidaRoute,
+  AdopcionIdRoute: AdopcionIdRoute,
+  MascotaIdRoute: MascotaIdRoute,
+  SolicitarIdRoute: SolicitarIdRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
